@@ -1,5 +1,7 @@
 /* Site Styles */
+@use 'variables' as *;
+
 body {
-    background-color: #fff;
-    color: #000;
+    background-color: $background-color;
+    color: $text-color;
 }

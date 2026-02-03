@@ -25,3 +25,6 @@ wp-content/languages/
 node_modules/
 /vendor/
 *.log
+
+# Design Files
+web-visual.xd
