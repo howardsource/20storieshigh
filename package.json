@@ -1,0 +1,16 @@
+{
+  "name": "20storieshigh",
+  "version": "1.0.0",
+  "description": "Just getting started",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css --style compressed",
+    "watch": "sass --watch wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.84.0"
+  }
+}

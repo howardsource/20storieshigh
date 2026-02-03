@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_693ab983484a6",
+    "title": "Work Archive",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Work Archive",
+    "menu_slug": "work-archive",
+    "parent_slug": "edit.php?post_type=work",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "work-archive-modules",
+    "autoload": 0,
+    "modified": 1765456799
+}
