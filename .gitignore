@@ -1,15 +1,15 @@
 # WordPress Core
-wp-admin/
-wp-includes/
-wp-*.php
-index.php
-license.txt
-readme.html
-xmlrpc.php
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
 
 # Config
-wp-config.php
-wp-config-sample.php
+/wp-config.php
+/wp-config-sample.php
 .env
 
 # Content
