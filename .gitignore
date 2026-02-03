@@ -1,6 +1,27 @@
-.DS_Store
-node_modules/
-.env
-/vendor/
+# WordPress Core
+wp-admin/
+wp-includes/
+wp-*.php
+index.php
+license.txt
+readme.html
+xmlrpc.php
+
+# Config
 wp-config.php
+wp-config-sample.php
+.env
+
+# Content
 wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-content/backups/
+wp-content/languages/
+
+# System
+.DS_Store
+.htaccess
+node_modules/
+/vendor/
+*.log
