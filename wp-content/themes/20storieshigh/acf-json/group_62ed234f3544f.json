@@ -183,15 +183,8 @@
                 "id": ""
             },
             "choices": {
-                "white": "White",
-                "navy": "Navy",
-                "orange": "Orange",
-                "yellow": "Yellow",
-                "blue-light": "Light Blue",
-                "pink": "Pink",
-                "purple": "Purple",
-                "green": "Green",
-                "black": "Black"
+                "black": "Black",
+                "yellow": "Yellow"
             },
             "default_value": "black",
             "return_format": "value",
@@ -221,5 +214,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770139900
+    "modified": 1744306940
 }

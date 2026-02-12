@@ -29,11 +29,7 @@
 				<div class="description">
 					<div class="date"><?php the_field('date_caption'); ?></div>
 					<h4><?php the_title(); ?></h4>
-					<div class="link-button small">
-						<a href="<?php the_permalink(); ?>">
-							Read More<span class="screen-reader-text"> about <?php the_title(); ?></span>
-						</a>
-					</div>
+					<div class="link-button small"><a href="<?php the_permalink(); ?>">Read More</a></div>
 				</div>
 			</div>
 		<?php
