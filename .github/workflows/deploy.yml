@@ -22,4 +22,3 @@ jobs:
           port: 22 
           local_path: 'wp-content/themes/20storieshigh/'
           remote_path: '/vhosts/20storieshigh.madeatsource.co.uk/htdocs/wp-content/themes/20storieshigh/'
-          args: '-vvv -o ConnectTimeout=5 -o StrictHostKeyChecking=no'
