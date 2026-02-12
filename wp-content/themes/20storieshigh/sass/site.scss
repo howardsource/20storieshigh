@@ -1,7 +1,263 @@
 /* Site Styles */
 @use 'variables' as *;
 
+// Accessibility Utilities
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    word-wrap: normal !important; 
+}
+
+.skip-link {
+    background-color: $background-color;
+    color: $text-color;
+    font-weight: 700;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+    top: -9999px;
+    z-index: 9999;
+    
+    &:focus {
+        top: 0;
+    }
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
 body {
     background-color: $background-color;
     color: $text-color;
+    font-family: $font-primary;
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "wght" 400;
+    margin: 0;
+    padding: 0;
+}
+
+#banner {
+    padding: 2rem 0;
+    height: 40rem; // Default height 400px
+    background-color: $color-green; // Default background color
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; // Align items to the top
+        height: 100%; // Ensure inner content can use the full height if needed
+        max-width: 135.2rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        #site-title {
+            a {
+                display: block;
+                width: 11.6rem; // 116px (half of 232px for retina)
+                height: 11.6rem;
+                background-image: url('../images/site-logo.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1) rotate(5deg);
+                }
+
+                // text-indent: -9999px; // Removed in favor of .screen-reader-text span
+                // overflow: hidden; // Removed
+                // white-space: nowrap; // Removed
+            }
+        }
+    }
+}
+
+// Accordion Styles
+.accordion-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:focus {
+        outline: 2px solid $color-black;
+        outline-offset: 2px;
+    }
+}
+
+#main-menu {
+    // border: 0.1rem solid $color-black; // Removed per user request
+    background-color: #fff; // White background as requested
+    margin-top: 1.5rem; // Add 15px margin to reach 35px from top (20px padding + 15px margin)
+    padding: 1.8rem; 
+    display: flex; // Align children (ul and button) horizontally
+    align-items: center; // Vertically center them
+    gap: 1.8rem; // Reduced from 2.4rem to fit content
+    height: 5rem; // 50px height
+    // width: 62.4rem; // ~624px width - Removed to allow width to fit content
+    box-sizing: border-box; // Ensure padding is included in height/width
+
+    ul {
+        display: flex;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            // border: 0.1rem solid $color-black; // Removed per user request
+            // transition: all 0.3s ease-in-out;
+
+            &.navy a::after { background-color: $color-navy; }
+            &.orange a::after { background-color: $color-orange; }
+            &.yellow a::after { background-color: $color-yellow; }
+            &.blue-light a::after { background-color: $color-blue-light; }
+            &.pink a::after { background-color: $color-pink; }
+            &.purple a::after { background-color: $color-purple; }
+            &.green a::after { background-color: $color-green; }
+            &.black a::after { background-color: $color-black; }
+            &.white a::after { background-color: #fff; }
+
+            &:hover a::after {
+                height: calc(100% - 4px);
+            }
+
+            a {
+                display: block; 
+                padding: 0.4rem 0.4rem; // 4px top padding as requested. Added 0.1rem side padding for visual balance.
+                font-variation-settings: "wdth" 125, "wght" 600;
+                font-size: 1.6rem;
+                line-height: 1;
+                text-transform: uppercase;
+                color: $text-color;
+                text-decoration: none;
+                position: relative;
+                z-index: 1;
+                white-space: nowrap; // Prevent text wrapping
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    width: 100%;
+                    height: 0.2rem; // 2px underline
+                    transition: height 0.3s ease-in-out;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+    .burger-menu {
+        display: block; // Or hidden on desktop? User asked to add it, didn't specify responsiveness. Assuming always visible or for mobile.
+        // Assuming visible for now as requested.
+        width: 4rem; // 40px
+        height: 1.8rem; // 18px
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+        // margin-left: 2rem; // Removed, handled by parent gap
+        transition: height 0.3s ease-in-out;
+
+        .bar {
+            display: block;
+            width: 100%;
+            height: 0.2rem; // 2px
+            background-color: $color-black;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+
+            &.top {
+                top: 0;
+            }
+
+            &.middle {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &.bottom {
+                bottom: 0;
+            }
+        }
+
+        &:hover {
+            height: 2.4rem; // Expand to 24px
+
+            // Bars stay relative to top/middle/bottom of the container, so they will spread out automatically
+            // because top is 0 and bottom is 0. 
+            // Top stays at 0.
+            // Bottom stays at bottom (which is now further down).
+            // Middle stays at 50% (which is now further down).
+        }
+    }
+
+    .search-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        width: 2.3rem; // Match icon width
+        height: 2.3rem; // Match icon height
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        
+        .search-icon {
+            display: block;
+            width: 2.3rem; // 23px wide circle
+            height: 2.3rem;
+            border: 0.2rem solid $color-black; // 2px black outline
+            border-radius: 50%;
+            position: relative;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0.2rem; // 2px width
+                height: 1rem; // 10px length (reduced from 15px)
+                background-color: $color-black;
+                
+                // Position handle at bottom right (45 degrees)
+                top: 85%; // Push it further out to avoid poking in
+                left: 85%;
+                transform: rotate(-45deg);
+                transform-origin: top center;
+                transition: background-color 0.3s ease-in-out;
+            }
+        }
+
+        &:hover {
+            .search-icon {
+                border-color: $color-brick;
+
+                &::after {
+                    background-color: $color-brick;
+                }
+            }
+        }
+    }
 }

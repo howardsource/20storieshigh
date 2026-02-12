@@ -88,13 +88,16 @@
                         "id": ""
                     },
                     "choices": {
-                        "red": "Red",
+                        "navy": "Navy",
+                        "orange": "Orange",
                         "yellow": "Yellow",
+                        "blue-light": "Light Blue",
+                        "pink": "Pink",
+                        "purple": "Purple",
                         "green": "Green",
-                        "cyan": "Cyan",
-                        "magenta": "Magenta"
+                        "black": "Black"
                     },
-                    "default_value": "red",
+                    "default_value": "navy",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -152,5 +155,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764702336
+    "modified": 1770139654
 }

@@ -14,7 +14,7 @@ function hide_posts_and_comments() {
 add_action('admin_menu', 'hide_posts_and_comments');
 
 function dashboard_footer () {
-	return "<span class='credit'>Animo ".date('Y')."</span>";
+	return "<span class='credit'>20 Stories High ".date('Y')."</span>";
 }
 add_filter('admin_footer_text', 'dashboard_footer');
 

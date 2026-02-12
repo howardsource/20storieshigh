@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css --style compressed",
-    "watch": "sass --watch wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css"
+    "build": "npx tailwindcss -i ./wp-content/themes/20storieshigh/tailwind.css -o ./wp-content/themes/20storieshigh/css/site.css --minify",
+    "watch": "npx tailwindcss -i ./wp-content/themes/20storieshigh/tailwind.css -o ./wp-content/themes/20storieshigh/css/site.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.84.0"
+    "@tailwindcss/cli": "^4.1.18",
+    "sass": "^1.84.0",
+    "tailwindcss": "^4.1.18"
   }
 }
