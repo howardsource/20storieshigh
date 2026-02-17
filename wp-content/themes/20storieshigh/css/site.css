@@ -74,6 +74,11 @@ body {
   font-size: 2.2rem;
   font-variation-settings: "wdth" 125, "wght" 700;
   z-index: 1000;
+  transition: height 0.2s ease, right 0.2s ease;
+}
+.donate-tab:hover {
+  height: 5.4rem;
+  right: -5rem;
 }
 
 #main-menu {
@@ -226,6 +231,17 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+#carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
 #carousel #carousel-swiper {
   width: 100%;
   height: 100%;
@@ -301,6 +317,13 @@ body {
 }
 #carousel .carousel-slide-content .carousel-slide-panel .carousel-slide-footer .dates {
   margin: 0;
+}
+#carousel .carousel-slide-content .carousel-slide-panel .carousel-slide-footer .large-button-link a {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+#carousel .carousel-slide-content .carousel-slide-panel .carousel-slide-footer .large-button-link a:hover {
+  color: #000000;
 }
 
 .module-tickertape {
@@ -502,7 +525,8 @@ body {
 .module.call-to-action.bricklight .large-button-link a:hover {
   color: #000000;
 }
-.module.call-to-action .large-button-link a {
+
+.large-button-link a {
   display: inline-block;
   margin-top: 2rem;
   padding: 1.2rem 2.4rem;
@@ -513,8 +537,9 @@ body {
   font-variation-settings: "wdth" 125, "wght" 700;
   text-decoration: none;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  font-size: 1.6rem;
 }
-.module.call-to-action .large-button-link a:hover {
+.large-button-link a:hover {
   background-color: #ffffff;
   border-color: #ffffff;
 }

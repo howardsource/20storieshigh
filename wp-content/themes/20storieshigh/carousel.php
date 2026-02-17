@@ -44,9 +44,11 @@
 									<?php endif; ?>
 
 									<?php if ($link_url) : ?>
-										<a class="link-button" href="<?= esc_url($link_url); ?>">
-											<?= esc_html($link_title); ?>
-										</a>
+										<p class="large-button-link">
+											<a href="<?= esc_url($link_url); ?>">
+												<?= esc_html($link_title); ?>
+											</a>
+										</p>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>
