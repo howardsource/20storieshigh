@@ -181,16 +181,17 @@
                 "id": ""
             },
             "choices": {
-                "white": "White",
-                "purple": "Purple",
+                "navy": "Navy",
+                "orange": "Orange",
+                "yellow": "Yellow",
+                "blue-light": "Light Blue",
                 "pink": "Pink",
-                "grey": "Grey",
-                "lilac": "Lilac",
-                "salmon": "Salmon",
-                "teal": "Teal",
-                "pale-blue": "Pale Blue (AiM)"
+                "purple": "Purple",
+                "green": "Green",
+                "brick": "Brick",
+                "bricklight": "Light Brick"
             },
-            "default_value": "white",
+            "default_value": "navy",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,

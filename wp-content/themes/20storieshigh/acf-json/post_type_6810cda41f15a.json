@@ -2,7 +2,7 @@
     "key": "post_type_6810cda41f15a",
     "title": "Projects",
     "menu_order": 0,
-    "active": false,
+    "active": true,
     "post_type": "projects",
     "advanced_configuration": true,
     "import_source": "",
@@ -85,5 +85,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1764326186
+    "modified": 1771324658
 }

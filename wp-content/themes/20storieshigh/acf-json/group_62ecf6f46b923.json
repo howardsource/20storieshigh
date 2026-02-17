@@ -378,6 +378,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_62ed234f3544f": {
+                    "key": "layout_62ed234f3544f",
+                    "name": "cta",
+                    "label": "Call to Action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62ed23e9clone",
+                            "label": "Call to Action",
+                            "name": "cta",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_62ed234f3544f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62ed101124b8a": {
                     "key": "layout_62ed101124b8a",
                     "name": "tiles",
@@ -471,6 +503,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69328bb00f7f1": {
+                    "key": "layout_69328bb00f7f1",
+                    "name": "tickertape",
+                    "label": "Tickertape",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_tickertape_text",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "allow_in_bindings": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": "1"
                 }
             },
             "min": "",
@@ -524,5 +587,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1765456372
+    "modified": 1965456372
 }

@@ -1,26 +1,65 @@
 <section id="carousel">
 	<div id="carousel-swiper" class="swiper">
 		<div id="carousel-slides" class="swiper-wrapper">
-			<?php $n=1; foreach(get_field('panels') as $slide ) : ?>
+			<?php 
+			$panels = get_field('panels');
+			if ($panels) :
+				foreach ($panels as $slide) : 
+					$image = $slide['image'] ?? null;
+					$title = $slide['title'] ?? '';
+					$overview = $slide['overview_text'] ?? '';
+					$dates = $slide['dates'] ?? '';
+					$link = $slide['link'] ?? null;
+					$link_url = $link['url'] ?? '';
+					$link_title = !empty($link['title']) ? $link['title'] : 'See More';
+
+					$background_url = '';
+					if (is_array($image)) {
+						if (!empty($image['sizes']['carousel'])) {
+							$background_url = $image['sizes']['carousel'];
+						} elseif (!empty($image['url'])) {
+							$background_url = $image['url'];
+						}
+					}
+			?>
 			<div class="swiper-slide outer">
-				<div class="image" style="background-image: url(<?= $slide['image']['sizes']['carousel']; ?>);"></div>
-			</div>				
-			<?php $n++; endforeach; ?>
+				<?php if ($background_url) : ?>
+					<div class="image" style="background-image: url(<?= esc_url($background_url); ?>)"></div>
+				<?php endif; ?>
+				<div class="carousel-slide-content">
+					<?php if ($title) : ?>
+						<h2><span><?= esc_html($title); ?></span></h2>
+					<?php endif; ?>
+
+					<?php if ($overview || $dates || $link_url) : ?>
+						<div class="carousel-slide-panel">
+							<?php if ($overview) : ?>
+								<p class="overview"><?= esc_html($overview); ?></p>
+							<?php endif; ?>
+
+							<?php if ($dates || $link_url) : ?>
+								<div class="carousel-slide-footer">
+									<?php if ($dates) : ?>
+										<p class="dates"><?= esc_html($dates); ?></p>
+									<?php endif; ?>
+
+									<?php if ($link_url) : ?>
+										<a class="link-button" href="<?= esc_url($link_url); ?>">
+											<?= esc_html($link_title); ?>
+										</a>
+									<?php endif; ?>
+								</div>
+							<?php endif; ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+			<?php 
+				endforeach; 
+			endif;
+			?>
 		</div>
 	</div>
-	<div id="carousel-message">We shape stories, shift perceptions and build trusted reputations.</div>
-	<?php /* <div class="circle-wrapper">
-		<svg class="semi-circle" viewBox="0 0 96 48" xmlns="http://www.w3.org/2000/svg">
-		  <path d="M0,48 A48,48 0 0,1 96,48 L96,48 L0,48 Z"/>
-		</svg>
-		<div class="circle-text">
-			<h2>Informing the public conversation</h2>
-			<p>We’re an award-winning strategic communications agency, working in the sweet spot where regeneration, arts & culture and civic transformation meet. We give clarity and purpose to your communications, informing the public conversation and making a meaningful difference.
-</p>
-<p><a class="link-button" href="<?= site_url('about'); ?>">What we're all about</a></p>
-		</div>
-	  </div> */ ?>
-	  
 </section>
 <script>
 	var swiper = new Swiper('#carousel-swiper', {
@@ -29,15 +68,6 @@
 		  speed: 1200,
 		autoplay: {
 			delay: 5000,
-		}
+		},
 	});
 </script>
-<div id="carousel-spacer"></div>
-<div id="mobile-intro" class="outer pink reveal permanent">
-	<div class="inner">
-		<div class="text"><h2>Informing the public conversation</h2>
-				<p>We’re an award-winning strategic communications agency, working in the sweet spot where regeneration, arts & culture and civic transformation meet. We give clarity and purpose to your communications, informing the public conversation and making a meaningful difference.
-	</p>
-	<p><a class="link-button" href="<?= site_url('about'); ?>">What we're all about</a></p></div>
-</div>
-</div>
