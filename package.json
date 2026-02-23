@@ -4,9 +4,9 @@
   "description": "Just getting started",
   "main": "index.js",
   "scripts": {
-    "sass": "sass wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css --style compressed",
-    "watch": "sass --watch wp-content/themes/20storieshigh/sass/site.scss wp-content/themes/20storieshigh/css/site.css",
-    "dev": "browser-sync start --proxy \"http://localhost\" --files \"wp-content/themes/20storieshigh/**/*.php\" \"wp-content/themes/20storieshigh/css/*.css\" --port 3000 --open false"
+    "sass": "sass wp-content/themes/20storieshigh/sass/site.scss:wp-content/themes/20storieshigh/css/site.css wp-content/themes/20storieshigh/sass/admin.scss:wp-content/themes/20storieshigh/css/admin.css --style=compressed",
+    "watch": "sass --watch wp-content/themes/20storieshigh/sass/site.scss:wp-content/themes/20storieshigh/css/site.css wp-content/themes/20storieshigh/sass/admin.scss:wp-content/themes/20storieshigh/css/admin.css",
+    "dev": "browser-sync start --proxy \"http://howardair.local/20storieshigh\" --files \"wp-content/themes/20storieshigh/**/*.php\" \"wp-content/themes/20storieshigh/css/*.css\" --port 3000 --open false"
   },
   "keywords": [],
   "author": "",
