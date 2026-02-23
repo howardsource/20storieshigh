@@ -2,7 +2,9 @@
 add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
     add_image_size('tile-5-4', 840, 672, true);
+    add_image_size('tiles', 656, 396, true);
     add_image_size('square', 840, 840, true);
+    add_image_size('square-sml', 360, 360, true);
     add_image_size('carousel', 1920, 1080, true);
     add_image_size('half-width', 1000, 800, true);
 });

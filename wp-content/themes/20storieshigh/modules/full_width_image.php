@@ -7,7 +7,7 @@ if($module['fixed_position']==true) :
 	$class .= ' fixed-scroll';
 endif;
 ?>
-<div class="module full-width-image outer pink">
+<div class="module full-width-image outer">
 		<div class="<?= $class; ?>" style="background-image: url('<?php echo $module['image']['sizes']['carousel']; ?>')">
 			<img src="<?php echo $module['image']['sizes']['carousel']; ?>" width="<?php echo $module['image']['sizes']['carousel-width']; ?>" height="<?php echo $module['image']['sizes']['carousel-height']; ?>" alt="<?php echo $module['image']['alt']; ?>" />
 		</div>

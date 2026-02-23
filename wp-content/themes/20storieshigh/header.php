@@ -12,4 +12,5 @@
 		$bodyClass = '';
 	?>
 	<body <?php echo body_class($bodyClass); ?>>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<a class="donate-tab" href="<?= esc_url(site_url('donate')); ?>">Donate</a>

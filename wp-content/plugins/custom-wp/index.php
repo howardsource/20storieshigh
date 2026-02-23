@@ -49,11 +49,12 @@ add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 
 function my_plugin_add_editor_styles($init_array) {
     $style_url = get_template_directory_uri() . '/css/admin.css?v=' . time();
+    $font_url = 'https://use.typekit.net/uzc2rly.css';
 
     if (!empty($init_array['content_css'])) {
-        $init_array['content_css'] .= ',' . $style_url;
+        $init_array['content_css'] .= ',' . $font_url . ',' . $style_url;
     } else {
-        $init_array['content_css'] = $style_url;
+        $init_array['content_css'] = $font_url . ',' . $style_url;
     }
 
     return $init_array;
@@ -81,6 +82,11 @@ function fb_mce_before_init( $settings ) {
             'title' => 'Large Type',
             'selector' => 'p',
             'classes' => 'large'
+            ),
+        array(
+            'title' => 'Small Type',
+            'selector' => 'p',
+            'classes' => 'small'
             ),      
        array(
          'title' => 'Link Button',

@@ -21,6 +21,9 @@
 							$background_url = $image['url'];
 						}
 					}
+
+					$title_length = function_exists('mb_strlen') ? mb_strlen($title) : strlen($title);
+					$title_class = $title_length > 20 ? ' long-title' : '';
 			?>
 			<div class="swiper-slide outer">
 				<?php if ($background_url) : ?>
@@ -28,7 +31,7 @@
 				<?php endif; ?>
 				<div class="carousel-slide-content">
 					<?php if ($title) : ?>
-						<h2><span><?= esc_html($title); ?></span></h2>
+						<h2 class="carousel-title<?= $title_class; ?>"><span><?= esc_html($title); ?></span></h2>
 					<?php endif; ?>
 
 					<?php if ($overview || $dates || $link_url) : ?>

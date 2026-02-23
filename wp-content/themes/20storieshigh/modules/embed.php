@@ -5,8 +5,6 @@ if ($embed) :
 		$src = $matches[1];
 		if (strpos($src, 'youtube.com') !== false || strpos($src, 'youtu.be') !== false) :
 			$params = [];
-			if ($module['autoplay']) $params['autoplay'] = 1;
-			if ($module['mute'])     $params['mute'] = 1;
 			if (!empty($params)) :
 				$src   = add_query_arg($params, $src);
 				$embed = preg_replace('/src="[^"]+"/', 'src="' . esc_url($src) . '"', $embed);
@@ -15,7 +13,7 @@ if ($embed) :
 	endif;
 endif;
 ?>
-<div class="module embed outer <?= $module['background_colour']; ?>">
+<div class="module embed outer">
 	<div class="inner">
 	<div class="oembed-container"><?php echo $embed; ?></div>
 	</div>

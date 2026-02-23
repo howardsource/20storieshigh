@@ -1,4 +1,4 @@
-<header id="banner" class="outer">
+<header id="banner" class="outer" role="banner">
 	<div class="inner">
 		<div id="site-title">
 			<a href="<?= esc_url(site_url()); ?>">
@@ -25,7 +25,7 @@
 				</li>
 				<?php endforeach; ?>
 			</ul>
-			<button class="burger-menu" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+			<button class="burger-menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-modal">
 				<span class="bar top"></span>
 				<span class="bar middle"></span>
 				<span class="bar bottom"></span>

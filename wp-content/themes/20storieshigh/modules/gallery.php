@@ -1,4 +1,4 @@
-<div class="module gallery outer <?= $module['background_colour']; ?>">
+<div class="module gallery outer <?= $module['background_colour']; ?> reveal">
 	<div class="inner">
 		<div id="gallery-<?= $modN; ?>" class="swiper">
 			<div class="swiper-wrapper">
@@ -11,16 +11,17 @@
 				</div>
 			<?php endforeach; ?>
 			</div>
-			<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>
-			<div class="swiper-pagination"></div>
 		</div>
-		
+		<div class="inner"><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div>
 	</div>
 </div>
 <script>
 	var swiper = new Swiper('#gallery-<?= $modN; ?>', {
+
 		slidesPerView: 1,
-		loop: false,
+		centeredSlides: false,
+		spaceBetween: 0,
+		loop: true,
 		speed: 700,
 		
 		  navigation: {

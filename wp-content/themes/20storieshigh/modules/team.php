@@ -1,13 +1,30 @@
-<section class="outer module team pink">
+<section class="outer module team white">
 	<div class="inner team-group">
 		<?php foreach($module['team'] as $tile) : ?>
+		<?php
+		$name  = !empty($tile['name']) ? $tile['name'] : 'Name coming soon';
+		$role  = !empty($tile['role']) ? $tile['role'] : 'Role to be confirmed';
+		$bio   = !empty($tile['bio']) ? $tile['bio'] : 'Bio coming soon.';
+		$email = !empty($tile['email']) ? $tile['email'] : '';
+		?>
 		<div class="team-member reveal">
-			<div class="image-outer"><div class="image" style="background-image: url(<?= $tile['thumbnail']['sizes']['tiles']; ?>")"></div></div>
+			<div class="image-outer">
+				<div class="image" style="background-image: url(<?= $tile['thumbnail']['sizes']['square']; ?>)"></div>
+			</div>
 			<div class="text-outer">
-				<h4><?= $tile['name']; ?></h4>
-				<h5><?= $tile['role']; ?></h5>
-				<div class="bio"><?= $tile['bio']; ?></div>
-				<div class="contact"><?= $tile['mobile']; ?><span class="separator"> . </span><a href="mailto:<?= $tile['email']; ?>"><?= $tile['email']; ?></a></div>
+				<div class="team-header">
+					<span class="team-name"><?= $name; ?></span>
+					<span class="team-toggle-icon" aria-hidden="true"></span>
+				</div>
+				<h5><?= $role; ?></h5>
+				<div class="contact">
+					<?php if ($email) : ?>
+						<a href="mailto:<?= $email; ?>"><?= $email; ?></a>
+					<?php else : ?>
+						<span>No email provided</span>
+					<?php endif; ?>
+				</div>
+				<div class="bio"><?= $bio; ?></div>
 			</div>
 		</div>
 		<?php endforeach; ?>
