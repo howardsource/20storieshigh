@@ -320,6 +320,14 @@ body.single-projects {
             }
         }
     }
+    &.child-page {
+        #title-banner {
+            h2 {
+                font-size: 6rem;
+                line-height: 5.5rem;
+            }
+        }
+    }
 }
 
 #main-content hr {
@@ -1663,6 +1671,12 @@ body.post-type-archive-projects {
 
 .module.columns {
     margin: 0;
+
+    h3 {
+        color: $color-purple;
+        font-size: 3.2rem;
+        line-height: 3.6rem;
+    }
 
     .single-column {
         max-width: 112rem;
