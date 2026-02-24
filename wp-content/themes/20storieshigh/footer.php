@@ -69,7 +69,7 @@
 		<p><a href="#">Privacy Policy</a> / <a href="#">Terms & Conditions</a> / <a href="#">Accessibility</a></p>
 	</div>
 </footer>
-
+<?php wp_footer(); ?>
 <script>
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -175,3 +175,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 })();
 </script>
+</body>
+</html>
