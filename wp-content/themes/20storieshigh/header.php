@@ -10,6 +10,9 @@
 		</head>
 	<?php
 		$bodyClass = '';
+		if (is_page() && $post->post_parent) {
+			$bodyClass .= 'child-page';
+		}
 	?>
 	<body <?php echo body_class($bodyClass); ?>>
 		<a href="#main-content" class="skip-link">Skip to main content</a>

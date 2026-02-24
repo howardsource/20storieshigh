@@ -1367,7 +1367,7 @@ body.post-type-archive-projects {
 }
 
 #main-content .module.team {
-    padding-top: 4rem;
+    padding: 4rem 0;
     .team-group {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(25.8rem, 30.8rem));
