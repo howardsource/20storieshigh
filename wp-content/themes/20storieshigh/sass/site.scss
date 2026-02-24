@@ -1671,11 +1671,25 @@ body.post-type-archive-projects {
 
 .module.columns {
     margin: 0;
-
+    p, li {
+        a {
+            text-decoration: underline;
+            color: black;
+        }
+    }
     h3 {
         color: $color-purple;
         font-size: 3.2rem;
         line-height: 3.6rem;
+    }
+
+    ul {
+
+        li {
+            list-style-type: disc;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
     }
 
     .single-column {
@@ -1787,7 +1801,7 @@ p.small {
         cursor: pointer;
     }
 }
-
+.link-button a,
 .large-button-link a {
     display: inline-block;
     margin-top: 2rem;
