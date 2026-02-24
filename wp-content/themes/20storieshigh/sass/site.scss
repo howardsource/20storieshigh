@@ -2222,14 +2222,38 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
-}
+    
+    .footer-menu-column {
+        max-width: 16rem;
+        
+        h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            line-height: 1;
+            text-transform: uppercase;
+            font-variation-settings: "wdth" 100, "wght" 700;
+            margin-bottom: 0.8rem;
+            a {
+                text-decoration: none;
+            }
+        }
 
-.mobile-menu-columns .footer-menu-column {
-    max-width: 16rem;
-}
-
-.mobile-menu-columns h3 a {
-    color: $color-green;
+        &:nth-child(5n + 1) h3 a {
+            color: $color-green;
+        }
+        &:nth-child(5n + 2) h3 a {
+            color: $color-pink;
+        }
+        &:nth-child(5n + 3) h3 a {
+            color: $color-blue-light;
+        }
+        &:nth-child(5n + 4) h3 a {
+            color: $color-yellow;
+        }
+        &:nth-child(5n + 5) h3 a {
+            color: $color-orange;
+        }
+    }
 }
 
 .mobile-menu-columns ul {
