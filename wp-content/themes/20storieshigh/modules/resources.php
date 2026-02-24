@@ -1,4 +1,4 @@
-<article class="module resources outer green">
+<article class="module resources outer <?=  $module['background_colour']; ?>">
     <div class="inner">
         <h3>Resources</h3>
         <div class="resource-group">
