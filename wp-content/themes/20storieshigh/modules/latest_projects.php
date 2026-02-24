@@ -21,12 +21,12 @@
 			while ( $latest_projects->have_posts() ) :
 				$latest_projects->the_post();
 				?>
-				<article <?php post_class( 'project-item' ); ?>>
+				<article <?php post_class( 'project-item ' ); ?>>
 					<a href="<?php the_permalink(); ?>" class="project-link">
 						<?php if(get_field('show_status')=='current')	: ?>
-						<div class="project-status">Current Show</div>
+						<div class="project-status current-show">Current Show</div>
 						<?php else : ?>
-						<div class="project-status">Past Show</div>
+						<div class="project-status past-show">Past Show</div>
 						<?php endif; ?>
 						<div class="project-image">
 							<?php if ( has_post_thumbnail() ) : ?>

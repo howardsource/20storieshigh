@@ -9,7 +9,7 @@ $title_words = preg_split('/\s+/', trim($title));
 	<div class="inner">
 		<div class="image" style="background-image: url(<?= $module['image']['sizes']['half-width']; ?>)"></div>
 		<div class="text">
-			<h3>
+			<h3 class="reveal">
 				<?php if (!empty($title_words)) : ?>
 					<?php foreach ($title_words as $word) : ?>
 						<span><?= esc_html($word); ?></span>
