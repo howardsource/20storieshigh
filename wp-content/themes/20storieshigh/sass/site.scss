@@ -1928,6 +1928,7 @@ p.small {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding-left: 4.4rem;
+        gap: 1px;
     }
 
     .project-item {
@@ -1973,9 +1974,13 @@ p.small {
 
         z-index: 999;
         background-color: $color-pink;
+        &.current-show {
+            background-color: $color-purple;
+            color: white;
+        }
     }
-
-  
+    
+    
         
     
     .project-image {
@@ -1998,16 +2003,17 @@ p.small {
     }
 
     .project-text h3 {
-        margin: 0 0 1.5rem;
+        margin: 0 0 0.5rem;
         font-size: 2.8rem;
+        line-height: 1;
         color: $color-navy;
         font-variation-settings: "wdth" 100, "wght" 700;
     }
 
     .project-excerpt {
         margin-bottom: 1.5rem;
-        font-size: 1.6rem;
-        line-height: 1.4;
+        font-size: 1.4rem;
+        line-height: 2rem;
     }
 
     .project-date {

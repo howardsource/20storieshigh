@@ -1711,6 +1711,7 @@ p.small {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding-left: 4.4rem;
+  gap: 1px;
 }
 .module.latest-projects .project-item {
   flex: 0 0 42rem;
@@ -1750,6 +1751,10 @@ p.small {
   z-index: 999;
   background-color: #F2AFC6;
 }
+.module.latest-projects .project-status.current-show {
+  background-color: #3D1B76;
+  color: white;
+}
 .module.latest-projects .project-image {
   overflow: hidden;
 }
@@ -1767,15 +1772,16 @@ p.small {
   justify-content: space-between;
 }
 .module.latest-projects .project-text h3 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.5rem;
   font-size: 2.8rem;
+  line-height: 1;
   color: #151E3C;
   font-variation-settings: "wdth" 100, "wght" 700;
 }
 .module.latest-projects .project-excerpt {
   margin-bottom: 1.5rem;
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 .module.latest-projects .project-date {
   margin-bottom: 2rem;
