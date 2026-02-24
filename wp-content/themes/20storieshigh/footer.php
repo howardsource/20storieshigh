@@ -7,8 +7,8 @@
 	hidden
 >
 	<div class="mobile-menu-inner">
-		<button type="button" class="mobile-menu-close" data-mobile-menu-close="true">
-			Close
+		<button type="button" class="mobile-menu-close" data-mobile-menu-close="true" aria-label="Close menu">
+			<span>Close</span>
 		</button>
 		<h2 id="mobile-menu-title" class="screen-reader-text">Site navigation</h2>
 		<nav class="mobile-menu-nav" aria-label="Mobile Navigation">
