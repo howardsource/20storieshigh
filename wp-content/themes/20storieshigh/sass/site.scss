@@ -594,7 +594,7 @@ body.post-type-archive-projects {
             text-transform: uppercase;
             font-size: 2rem;
             font-weight: 600;
-            padding-bottom: 1rem;
+            
             z-index: 999;
         }
         
@@ -935,7 +935,7 @@ body.post-type-archive-projects {
             transform: translateY(-50%);
             font-size: 10rem;
             line-height: 1;
-            font-variation-settings: "wdth" 125, "wght" 800;
+            font-variation-settings: "wdth" 125, "wght" 750;
             text-transform: uppercase;
             color: $color-green;
             max-width: 80rem;
@@ -943,7 +943,8 @@ body.post-type-archive-projects {
             text-align: left;
             word-break: break-word;
             margin: 0;
-
+            transition-duration: 0.3s;
+            
             span {
                 display: inline;
                 background-color: $color-purple;
@@ -1016,9 +1017,11 @@ body.post-type-archive-projects {
         position: absolute;
         top: 0;
         bottom: 0;
-        right: 100%;
-        width: 100vw;
+        right: calc(100% - 321px);
+        width: calc(281px + (100vw - 100%));
         background-color: $color-green;
+        background-image: url('../images/welcome.png');
+        background-size: contain;
     }
 
     .home-welcome-layout {
@@ -1029,7 +1032,7 @@ body.post-type-archive-projects {
     .home-welcome-left {
         flex: 0 0 32.1rem;
         min-width: 32.1rem;
-        background-color: $color-green;
+       //background-color: $color-green;
         position: relative;
         overflow: hidden;
         &:after {
@@ -1040,8 +1043,8 @@ body.post-type-archive-projects {
             right: -100%;
             width: 100%;
             height: 100%;
-            background-color: $color-green;
-            background-image: url('../images/welcome.png');
+            //background-color: $color-green;
+            //background-image: url('../images/welcome.png');
             background-size: 100%;
             background-position: right top;
             background-repeat: no-repeat;
@@ -1164,7 +1167,7 @@ body.post-type-archive-projects {
             word-break: break-word;
             line-height: 5rem;
             margin: 0 0 2rem;
-
+           
             span {
                 display: block;
             }
@@ -1967,7 +1970,7 @@ p.small {
         text-transform: uppercase;
         font-size: 2rem;
         font-weight: 600;
-        padding-bottom: 1rem;
+
         z-index: 999;
         background-color: $color-pink;
     }
