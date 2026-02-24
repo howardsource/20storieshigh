@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_699da2b97aec0",
+    "title": "Projects Archive",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Projects Archive",
+    "menu_slug": "projects-archive",
+    "parent_slug": "edit.php?post_type=projects",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1771938511
+}
