@@ -179,7 +179,8 @@ body.high-contrast #main-menu ul li a {
 }
 
 body.page,
-body.single-projects {
+body.single-projects,
+body.single-news {
     #title-banner {
         height: calc(100vh - 100px);
         max-height: 70rem;
@@ -357,6 +358,11 @@ body.post-type-archive-news {
                 color: $color-purple;
             }
         }
+    }
+
+    #news-archive-content {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
 
     .current-show {
