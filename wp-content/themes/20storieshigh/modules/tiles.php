@@ -4,7 +4,8 @@
 <section class="outer module tiles">
 	<div class="inner tile-group <?= $module['background_colours']; ?> <?= $module['tile_types']; ?>">
 		<?php foreach($module['tiles'] as $tile) : ?>
-		<div class="tile">
+		<?php $colour = ($tile['background_colour']); ?>
+		<div class="tile <?php echo $colour; ?>">
 			<div class="image-outer"><div class="image" style="background-image: url(<?= $tile['image']['sizes']['tiles']; ?>")"></div></div>
 			<h4><a href="<?= $tile['link']; ?>"><?= $tile['title']; ?></a></h4>
 			<?php if($tile['excerpt']!='' && $module['tile_types']=='image-overview') : ?><p><?= $tile['excerpt']; ?></p><?php endif; ?>

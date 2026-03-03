@@ -1465,6 +1465,7 @@ body.post-type-archive-news {
             .tile {
                 background-color: #f5f5f5;
                 cursor: pointer;
+               
                 .image-outer {
                     width: 100%;
                     aspect-ratio: 21 / 9;
@@ -1514,8 +1515,30 @@ body.post-type-archive-news {
                             color: white;
                         }
                     }
+                    &.grey {
+                        background-color: #f5f5f5;
+                        color: black;
+                        h4 {
+                            a {
+                                color: $color-purple;
+                            }
+                        }
+                    }
                 }
-            }            
+            }  
+            &.grey {
+                .tile {
+                    &.purple {
+                        background-color: $color-purple;
+                        color: white;
+                        h4 {
+                            a {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }          
         }
     }
 }
