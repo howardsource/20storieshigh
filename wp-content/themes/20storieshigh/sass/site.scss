@@ -2274,3 +2274,231 @@ footer {
 .mobile-menu-columns a:hover {
     text-decoration: underline;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .outer > .inner {
+        width: calc(100% - 4rem);
+    }
+
+    /* Typography Overrides */
+    h2, .h2 {
+        font-size: 4rem !important;
+        line-height: 1.1 !important;
+    }
+
+    h3, .h3 {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    #title-banner h2 {
+        font-size: 5rem;
+        line-height: 1;
+        max-width: 100%;
+    }
+
+    .module-tickertape .tickertape-text {
+        font-size: 8rem;
+        line-height: 1;
+    }
+
+    /* Carousel */
+    #carousel .carousel-slide-content .carousel-title {
+        font-size: 4rem;
+        width: calc(100% - 4rem);
+        max-width: 100%;
+    }
+    
+    #carousel .carousel-slide-content .carousel-slide-panel {
+        width: 100%;
+        padding: 3rem;
+    }
+
+    /* Layout Overrides - Single Column */
+    #home-welcome .home-welcome-layout {
+        flex-direction: column;
+    }
+
+    #home-welcome .home-welcome-left {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 30rem;
+        min-width: 0;
+    }
+
+    #home-welcome .home-welcome-text {
+        padding: 4rem 0;
+        margin-left: 0;
+        
+        h2 {
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+    }
+
+    body.single-projects,
+    body.single-news {
+        .project-single .inner,
+        .news-single .inner {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .project-single-image,
+        .news-single-image,
+        .project-single-text,
+        .news-single-text,
+        .project-single-details,
+        .news-single-details {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            flex: 1 1 auto;
+            padding: 2rem;
+            margin-left: 0;
+        }
+
+        .project-single-details,
+        .news-single-details {
+            padding: 3rem;
+        }
+    }
+
+    body.post-type-archive-projects .archive.archive-projects .projects-list {
+        grid-template-columns: 1fr;
+    }
+
+    body.post-type-archive-news .current-show .current-show-panel {
+        flex-direction: column;
+        
+        .current-show-image {
+            width: 100%;
+            height: 30rem;
+        }
+        
+        .current-show-text {
+            width: 100%;
+            padding: 3rem;
+        }
+    }
+    
+    body.post-type-archive-news .news-archive-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Modules */
+    .module.call-to-action .inner {
+        flex-direction: column !important;
+        gap: 2rem;
+        
+        .cta-text, .cta-image {
+            width: 100%;
+        }
+        
+        .cta-image {
+            height: 30rem;
+        }
+    }
+    
+    .module-accordion .accordion-item .accordion-header {
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    .module-team .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .module-resources .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .module-tiles .tiles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .module-two-image-columns .inner {
+        flex-direction: column;
+        gap: 2rem;
+        
+        .image-column {
+            width: 100%;
+        }
+    }
+    
+    .module-stacked-title-and-text .inner {
+        flex-direction: column;
+        gap: 2rem;
+        
+        .stacked-title, .stacked-text {
+            width: 100%;
+        }
+    }
+    
+    .module-introduction .inner,
+    .module-large-introduction .inner {
+        padding: 4rem 2rem;
+        
+        h2 {
+            font-size: 3rem;
+        }
+    }
+
+    /* Footer */
+    footer {
+        padding: 5rem 0;
+        
+        #footer-navigation {
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        .footer-logo {
+            padding-right: 0;
+            margin-bottom: 2rem;
+        }
+        
+        #footer-menu {
+            flex-direction: column;
+            width: 100%;
+            gap: 3rem;
+            
+            .footer-menu-column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        
+        #footer-socials {
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+        .footer-partners, .footer-legal {
+            padding-top: 2rem !important;
+        }
+    }
+
+    /* Donate Tab */
+    .donate-tab {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 5rem;
+        transform: none;
+        position: fixed;
+        justify-content: center;
+        z-index: 9999;
+        
+        &:hover, &:focus-visible {
+            height: 5rem;
+            right: 0;
+        }
+    }
+}
