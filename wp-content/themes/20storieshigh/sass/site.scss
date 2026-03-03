@@ -319,7 +319,8 @@ body.single-projects {
     }
 }
 
-body.post-type-archive-projects {
+body.post-type-archive-projects,
+body.post-type-archive-news {
     #title-banner {
         margin-top: 0;
         background-color: $color-green;
@@ -1415,6 +1416,13 @@ body.post-type-archive-projects {
                         text-decoration: none;
                     }
                 }
+                h5 {
+                    font-size: 1.8rem;
+                    line-height: 2.6rem;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    padding: 1rem 2rem;
+                }
                 &:nth-child(5n + 1) h4 a {
                     color: $color-green;
                 }
@@ -1462,6 +1470,13 @@ body.post-type-archive-projects {
                         color: $color-purple;
                         text-decoration: none;
                     }
+                }
+                h5 {
+                    padding: 0 1.5rem 0 1.5rem;
+                    font-size: 1.8rem;
+                    line-height: 2.6rem;
+                    font-weight: 500;
+                    margin: 0.5rem 0;
                 }
                 p {
                     padding: 0 1.5rem 1.5rem 1.5rem;
