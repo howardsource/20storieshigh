@@ -123,6 +123,18 @@ body.high-contrast #main-menu ul li a {
 
     &.brick {
         background-color: $color-brick;
+        color: white;
+        h4, h3, h2 {
+            color: white !important;
+        }
+        a {
+            color: white;
+        }
+        .large-button-link {
+            a {
+                border: 1px solid white;
+            }
+        }
     }
 
     &.bricklight {
