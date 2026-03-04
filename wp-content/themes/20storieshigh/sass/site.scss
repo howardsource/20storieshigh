@@ -232,6 +232,47 @@ body.single-news {
                     color: $color-green;
                 }
             }
+
+            &.navy {
+                background-color: $color-navy;
+                h2 span { color: $color-navy; }
+            }
+            &.black {
+                background-color: $color-black;
+                h2 span { color: $color-black; }
+            }
+            &.orange {
+                background-color: $color-orange;
+                h2 span { color: $color-orange; }
+            }
+            &.yellow {
+                background-color: $color-yellow;
+                h2 span { color: $color-yellow; }
+            }
+            &.blue-light {
+                background-color: $color-blue-light;
+                h2 span { color: $color-blue-light; }
+            }
+            &.pink {
+                background-color: $color-pink;
+                h2 span { color: $color-pink; }
+            }
+            &.purple {
+                background-color: $color-purple;
+                h2 span { color: $color-purple; }
+            }
+            &.brick {
+                background-color: $color-brick;
+                h2 span { color: $color-brick; }
+            }
+            &.bricklight {
+                background-color: $color-bricklight;
+                h2 span { color: $color-bricklight; }
+            }
+            &.white {
+                background-color: #ffffff;
+                h2 span { color: #ffffff; }
+            }
         }
     }
     &.child-page {
