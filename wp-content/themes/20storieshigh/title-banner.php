@@ -11,7 +11,7 @@ if ($banner_image) {
 $has_banner_image = !empty($banner_background_url);
 ?>
 
-<div<?php if ($has_banner_image) : ?> style="background-image: url(<?= esc_url($banner_background_url); ?>)";<?php endif; ?> id="title-banner" class="outer<?php echo get_field('narrow_banner')==true ? ' narrow' : ''; if($has_banner_image) : echo ' banner-with-image'; else : echo ' no-image'; endif; ?>">
+<div<?php if ($has_banner_image) : ?> style="background-image: url(<?= esc_url($banner_background_url); ?>)";<?php endif; ?> id="title-banner" class="outer<?php echo get_field('narrow_banner')==true ? ' narrow' : ''; if($has_banner_image) : echo ' banner-with-image'; else : echo ' no-image ' . esc_attr(get_field('banner_colour')); endif; ?>">
 	<div class="inner"><h2><span><?php 
 		if(get_field('banner_title')!='') :
 			echo get_field('banner_title');
