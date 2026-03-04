@@ -235,11 +235,11 @@ body.single-news {
 
             &.navy {
                 background-color: $color-navy;
-                h2 span { color: $color-navy; }
+                h2 span { color: white; }
             }
             &.black {
                 background-color: $color-black;
-                h2 span { color: $color-black; }
+                h2 span { color: white; }
             }
             &.orange {
                 background-color: $color-orange;
@@ -259,15 +259,15 @@ body.single-news {
             }
             &.purple {
                 background-color: $color-purple;
-                h2 span { color: $color-purple; }
+                h2 span { color: white; }
             }
             &.brick {
                 background-color: $color-brick;
-                h2 span { color: $color-brick; }
+                h2 span { color: white; }
             }
             &.bricklight {
                 background-color: $color-bricklight;
-                h2 span { color: $color-bricklight; }
+                h2 span { color: white; }
             }
             &.white {
                 background-color: #ffffff;
