@@ -144,6 +144,10 @@ body.high-contrast #main-menu ul li a {
     &.white {
         background-color: #ffffff;
     }
+
+    &.light-grey {
+        background-color: $color-grey-light;
+    }
 }
 
 .outer > .inner {
@@ -1689,6 +1693,20 @@ body.post-type-archive-news {
         color: $color-purple;
         font-size: 3.2rem;
         line-height: 3.6rem;
+    }
+
+    &.navy, &.black, &.purple, &.brick, &.bricklight {
+        color: white;
+        
+        h3 {
+            color: white;
+        }
+
+        p, li {
+            a {
+                color: white;
+            }
+        }
     }
 
     ul {

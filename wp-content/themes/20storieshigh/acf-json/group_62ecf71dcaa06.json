@@ -386,7 +386,8 @@
                 "purple": "Purple",
                 "green": "Green",
                 "brick": "Brick",
-                "bricklight": "Light Brick"
+                "bricklight": "Light Brick",
+                "light-grey": "Light Grey"
             },
             "default_value": "white",
             "return_format": "value",
