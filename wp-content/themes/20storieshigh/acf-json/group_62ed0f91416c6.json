@@ -249,7 +249,7 @@
                     "post_type": [
                         "page",
                         "news",
-                        "work"
+                        "projects"
                     ],
                     "post_status": "",
                     "taxonomy": "",
@@ -388,5 +388,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772548145
+    "modified": 1772638664
 }

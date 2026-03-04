@@ -1,6 +1,6 @@
 <section class="module outer accordion">
 	<?php if($module['display_title']) : ?>
-	<div class="inner title title-<?= $module['cols_type']; ?><?php if($module['centred_title']) : ?> centred-title<?php endif; ?>"><h3><?= $module['title']; ?></h3></div>
+	<div class="module-title"><h3><?= $module['title']; ?></h3></div>
 	<?php endif; ?>
 	<div class="inner accordion-columns">
 		<div class="column">

@@ -7,8 +7,9 @@
 		<?php $colour = ($tile['background_colour']); ?>
 		<div class="tile <?php echo $colour; ?>">
 			<div class="image-outer"><div class="image" style="background-image: url(<?= $tile['image']['sizes']['tiles']; ?>")"></div></div>
-			<h4><a href="<?= $tile['link']; ?>"><?= $tile['title']; ?></a></h4>
+			<h4><?= $tile['title']; ?></h4>
 			<?php if($tile['excerpt']!='' && $module['tile_types']=='image-overview') : ?><p><?= $tile['excerpt']; ?></p><?php endif; ?>
+				<p class="large-button-link"><a href="<?= $tile['link']; ?>">Find Out More</a></p>
 		</div>
 		<?php endforeach; ?>
 	</div>

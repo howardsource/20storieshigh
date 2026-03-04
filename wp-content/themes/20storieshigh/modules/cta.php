@@ -10,11 +10,12 @@ $title_words = preg_split('/\s+/', trim($title));
 		<div class="image" style="background-image: url(<?= $module['image']['sizes']['half-width']; ?>)"></div>
 		<div class="text">
 			<h3 class="reveal">
-				<?php if (!empty($title_words)) : ?>
+				<?= $module['title']; ?>
+				<?php /* if (!empty($title_words)) : ?>
 					<?php foreach ($title_words as $word) : ?>
 						<span><?= esc_html($word); ?></span>
 					<?php endforeach; ?>
-				<?php endif; ?>
+				<?php endif; */ ?>
 			</h3>
 			<?= $module['text']; ?>
 			<p class="large-button-link"><a href="<?= $module['link']; ?>"><?= $module['link_text']; ?></a></p>

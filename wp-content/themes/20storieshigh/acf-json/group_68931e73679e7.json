@@ -262,24 +262,19 @@
                 "id": ""
             },
             "choices": {
-                "navy": "Navy",
-                "orange": "Orange",
-                "yellow": "Yellow",
-                "blue-light": "Light Blue",
-                "pink": "Pink",
-                "purple": "Purple",
-                "green": "Green",
-                "brick": "Brick",
-                "bricklight": "Light Brick"
+                "white": "White",
+                "light-grey": "Light Grey"
             },
-            "default_value": "navy",
+            "default_value": "white",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -300,5 +295,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1759415197
+    "display_title": "",
+    "modified": 1772640431
 }
