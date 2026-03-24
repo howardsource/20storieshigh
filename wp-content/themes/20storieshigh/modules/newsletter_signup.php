@@ -1,6 +1,11 @@
 <section class="module newsletter call-to-action image-text">
 	<div class="inner">
-		<div class="image"></div>
+		<div class="image">
+			<video autoplay muted loop playsinline preload="auto">
+				<source src="<?= esc_url(get_template_directory_uri() . '/images/2TS-Email-Newsletter-Animation.mp4'); ?>" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
 		<div class="text">
 			<h3>Get More<br /> and Sign Up!</h3>
 			<form class="newsletter-form">
