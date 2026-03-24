@@ -23,3 +23,28 @@ add_filter('acf/settings/load_json', function( $paths ) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 });
+
+add_action('pre_get_posts', function ($query) {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    if (!$query->is_post_type_archive('projects')) {
+        return;
+    }
+    if (!function_exists('get_field')) {
+        return;
+    }
+    $highlighted_show = get_field('highlighted_show', 'options');
+    $highlighted_show_id = $highlighted_show instanceof WP_Post
+        ? $highlighted_show->ID
+        : (is_numeric($highlighted_show) ? (int) $highlighted_show : 0);
+    if ($highlighted_show_id <= 0) {
+        return;
+    }
+    $post__not_in = $query->get('post__not_in');
+    if (!is_array($post__not_in)) {
+        $post__not_in = [];
+    }
+    $post__not_in[] = $highlighted_show_id;
+    $query->set('post__not_in', array_values(array_unique($post__not_in)));
+});

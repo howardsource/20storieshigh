@@ -4,8 +4,11 @@ $banner_background_url = '';
 
 if ($banner_image) {
 	$banner_background_url = isset($banner_image['sizes']['carousel']) ? $banner_image['sizes']['carousel'] : $banner_image['url'];
-} elseif (is_singular('projects') && has_post_thumbnail()) {
-	$banner_background_url = get_the_post_thumbnail_url(get_the_ID(), 'carousel') ?: get_the_post_thumbnail_url();
+} elseif (is_singular('projects')) {
+	$proj_thumb = get_field('thumbnail');
+	if ($proj_thumb) {
+		$banner_background_url = isset($proj_thumb['sizes']['carousel']) ? $proj_thumb['sizes']['carousel'] : $proj_thumb['url'];
+	}
 }
 
 $has_banner_image = !empty($banner_background_url);

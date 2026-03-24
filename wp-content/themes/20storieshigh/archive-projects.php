@@ -21,48 +21,47 @@ get_header();
 <?php endif; ?>
 
 <?php
-$current_show_post = null;
-$current_show_id   = 0;
-
-if (!is_paged() && have_posts()) {
-	global $wp_query;
-
-	if (!empty($wp_query->posts[0]) && $wp_query->posts[0] instanceof WP_Post) {
-		$current_show_post = $wp_query->posts[0];
-		$current_show_id   = $current_show_post->ID;
-	}
-}
+$highlighted_show = get_field('highlighted_show', 'options');
+$current_show_id  = $highlighted_show instanceof WP_Post
+	? (int) $highlighted_show->ID
+	: (is_numeric($highlighted_show) ? (int) $highlighted_show : 0);
 ?>
 
-<?php if ($current_show_post) : ?>
+<?php if ($current_show_id > 0) : ?>
 <div class="outer current-show green">
 	<div class="inner">
-		<?php setup_postdata($current_show_post); ?>
 		<div class="current-show-panel">
 			<div class="project-text current-show-text">
 				<p class="current-show-label">
-					<span>Current</span>
-					<span>Show</span>
+					<?=  get_field('highlight_title', 'options'); ?>
 				</p>
-				<h3><?php the_title(); ?></h3>
+				<h3><?= get_the_title($current_show_id); ?></h3>
 				<?php if (get_field('excerpt', $current_show_id)) : ?>
 					<div class="project-excerpt">
-						<?php the_field('excerpt', $current_show_id); ?>
+						<?= get_field('excerpt', $current_show_id); ?>
 					</div>
 				<?php endif; ?>
 				<?php if (get_field('performance_dates', $current_show_id)) : ?>
 					<div class="project-date">
-						<?php the_field('performance_dates', $current_show_id); ?>
+						<?= get_field('performance_dates', $current_show_id); ?>
 					</div>
 				<?php endif; ?>
 				<p class="large-button-link">
-					<a href="<?php the_permalink(); ?>">View Show</a>
+					<a href="<?= esc_url(get_permalink($current_show_id)); ?>">View Show</a>
 				</p>
 			</div>
 			<div class="project-image current-show-image">
-				<a href="<?php the_permalink(); ?>">
-					<?php if (has_post_thumbnail($current_show_id)) : ?>
-						<?php echo get_the_post_thumbnail($current_show_id, 'half-width'); ?>
+				<a href="<?= esc_url(get_permalink($current_show_id)); ?>">
+					<?php 
+					$thumb = get_field('thumbnail', $current_show_id);
+					$thumb_src = '';
+					if (is_array($thumb)) {
+						$thumb_src = $thumb['sizes']['half-width'] ?? '';
+					} elseif (is_numeric($thumb)) {
+						$thumb_src = wp_get_attachment_image_url((int)$thumb, 'half-width') ?: '';
+					}
+					if ($thumb_src) : ?>
+						<img src="<?= esc_url($thumb_src); ?>" alt="<?= esc_attr(get_the_title($current_show_id)); ?>">
 					<?php endif; ?>
 				</a>
 			</div>
@@ -80,11 +79,7 @@ if (!is_paged() && have_posts()) {
 		<?php if (have_posts()) : ?>
 			<div class="projects-list">
 				<?php while (have_posts()) : the_post(); ?>
-					<?php
-					if (!is_paged() && $current_show_id && get_the_ID() === $current_show_id) {
-						continue;
-					}
-					?>
+					<?php if (!empty($current_show_id) && get_the_ID() === (int)$current_show_id) { continue; } ?>
 					<article <?php post_class('project-item'); ?>>
 						<a href="<?php the_permalink(); ?>" class="project-link">
 						<?php if(get_field('show_status')=='current')	: ?>
@@ -93,8 +88,24 @@ if (!is_paged() && have_posts()) {
 						<div class="project-status">Past Show</div>
 						<?php endif; ?>
 						<div class="project-image">
-								<?php if (has_post_thumbnail()) : ?>
-									<?php the_post_thumbnail('half-width'); ?>
+								<?php 
+								$thumb = get_field('thumbnail');
+								$thumb_src = '';
+								if (is_array($thumb)) {
+									$thumb_src = $thumb['sizes']['half-width']
+										?? $thumb['sizes']['tile-5-4']
+										?? $thumb['sizes']['large']
+										?? $thumb['sizes']['carousel']
+										?? $thumb['url']
+										?? '';
+								} elseif (is_numeric($thumb)) {
+									$thumb_src = wp_get_attachment_image_url((int)$thumb, 'half-width')
+										?: wp_get_attachment_image_url((int)$thumb, 'tile-5-4')
+										?: wp_get_attachment_image_url((int)$thumb, 'large')
+										?: wp_get_attachment_image_url((int)$thumb, 'full');
+								}
+								if ($thumb_src) : ?>
+									<img src="<?= esc_url($thumb_src); ?>" alt="<?= esc_attr(get_the_title()); ?>">
 								<?php endif; ?>
 							</div>
 							<div class="project-text">

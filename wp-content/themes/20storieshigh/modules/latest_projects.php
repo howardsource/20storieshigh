@@ -29,8 +29,10 @@
 						<div class="project-status past-show">Past Show</div>
 						<?php endif; ?>
 						<div class="project-image">
-							<?php if ( has_post_thumbnail() ) : ?>
-								<?php the_post_thumbnail( 'half-width' ); ?>
+							<?php 
+							$thumb = get_field('thumbnail');
+							if ($thumb && !empty($thumb['sizes']['half-width'])) : ?>
+								<img src="<?= esc_url($thumb['sizes']['half-width']); ?>" alt="<?= esc_attr(get_the_title()); ?>">
 							<?php endif; ?>
 						</div>
 						<div class="project-text">
