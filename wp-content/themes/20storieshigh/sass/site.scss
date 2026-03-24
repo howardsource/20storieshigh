@@ -1738,6 +1738,7 @@ body.post-type-archive-news {
     margin: 0;
    
     p, li {
+        
         a {
             text-decoration: underline;
             color: black;
@@ -1757,6 +1758,17 @@ body.post-type-archive-news {
     }
     iframe {
         margin-bottom: 3rem;
+    }
+    p.link-button {
+        a {
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            &:hover {
+                background-color: #000000;
+                color: white !important;
+            }
+        }
     }
     &.navy, &.black, &.purple, &.brick, &.bricklight {
         color: white;
@@ -1911,7 +1923,7 @@ p.small {
     font-size: 1.6rem;
     &:hover {
         background-color: black;
-        color: white !important;
+        color: white;
     }
     &.white {
         background-color: #ffffff;
