@@ -16,16 +16,17 @@ get_template_part('banner');
 			<div class="outer project-single white">
 				<div class="inner">
 					<div class="project-single-text">
-						<?php if (get_field('main_content')) : ?>
+						<?php $main_content = get_field('main_content'); ?>
+						<?php if ($main_content) : ?>
 							<div class="project-body">
-								<?php the_field('main_content'); ?>
+								<?= apply_filters('the_content', $main_content); ?>
 							</div>
 						<?php endif; ?>
 					</div>
 					<div class="project-single-details">
 						<p class="project-single-dates">
 							Show Dates:<br>
-							February 2026
+							<?= get_field('performance_dates'); ?>
 						</p>
 					</div>
 				</div>

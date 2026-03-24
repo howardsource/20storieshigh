@@ -1,6 +1,6 @@
-<section class="module outer accordion">
+<section class="module outer accordion <?=  $module['background_colour'] ?>">
 	<?php if($module['display_title']) : ?>
-	<div class="module-title"><h3><?= $module['title']; ?></h3></div>
+	<div class="module-title inner"><h3><?= $module['title']; ?></h3></div>
 	<?php endif; ?>
 	<div class="inner accordion-columns">
 		<div class="column">

@@ -5,6 +5,7 @@
 		$name  = !empty($tile['name']) ? $tile['name'] : 'Name coming soon';
 		$role  = !empty($tile['role']) ? $tile['role'] : 'Role to be confirmed';
 		$bio   = !empty($tile['bio']) ? $tile['bio'] : 'Bio coming soon.';
+		$mobile = !empty($tile['mobile']) ? $tile['mobile'] : '';
 		$email = !empty($tile['email']) ? $tile['email'] : '';
 		?>
 		<div class="team-member reveal">
@@ -18,6 +19,9 @@
 				</div>
 				<h5><?= $role; ?></h5>
 				<div class="contact">
+					<?php if ($mobile) : ?>
+						<?= $mobile; ?>
+					<?php endif; ?>
 					<?php if ($email) : ?>
 						<a href="mailto:<?= $email; ?>"><?= $email; ?></a>
 					<?php else : ?>

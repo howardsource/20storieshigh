@@ -8,7 +8,7 @@
 ?>
 <section class="outer module columns reveal <?= esc_attr( $background ); ?>">
 	<?php if($module['display_title']) : ?>
-	<div class="inner title title-<?= $module['cols_type']; ?><?php if($module['centred_title']) : ?> centred-title<?php endif; ?>"><h3><?= $module['title']; ?></h3></div>
+	<div class="inner title title-<?= $module['cols_type']; ?>"><h3><?= $module['title']; ?></h3></div>
 	<?php endif; ?>
 	<?php if($module['cols_type']=='single') : ?>
 		<?php if($module['single_column']!='') : ?>
