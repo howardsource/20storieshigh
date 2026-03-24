@@ -5,8 +5,9 @@
 	}
 
 	$background = $module['background_colour'] ?? 'white';
+	$paddingTop = $module['padding_top'] ?? 'default-padding';
 ?>
-<section class="outer module columns reveal <?= esc_attr( $background ); ?>">
+<section class="outer module columns reveal <?= esc_attr($background ); ?> <?= esc_attr( 'padding-'.$paddingTop ); ?>">
 	<?php if($module['display_title']) : ?>
 	<div class="inner title title-<?= $module['cols_type']; ?>"><h3><?= $module['title']; ?></h3></div>
 	<?php endif; ?>

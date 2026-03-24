@@ -1734,8 +1734,9 @@ body.post-type-archive-news {
 
 
 
-.module.columns {
+#main-content .module.columns {
     margin: 0;
+   
     p, li {
         a {
             text-decoration: underline;
@@ -1746,8 +1747,17 @@ body.post-type-archive-news {
         color: $color-purple;
         font-size: 3.2rem;
         line-height: 3.6rem;
+        text-transform: none;
     }
-
+    h4 {
+        color: $color-purple;
+        font-size: 2.6rem;
+        line-height: 2.6rem;
+        text-transform: none;
+    }
+    iframe {
+        margin-bottom: 3rem;
+    }
     &.navy, &.black, &.purple, &.brick, &.bricklight {
         color: white;
         
@@ -1811,10 +1821,16 @@ body.post-type-archive-news {
 
 .outer.module.columns:not(.white) {
     padding: 7rem 0;
+    &.padding-big {
+        padding: 14rem 0;
+    }
 }
 
 .outer.module.columns.white {
     padding: 4rem 0;
+    &.padding-big {
+        padding: 8rem 0;
+    }
 }
 
 body.page #modules > .module.columns:first-child {

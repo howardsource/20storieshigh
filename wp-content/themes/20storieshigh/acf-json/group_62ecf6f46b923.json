@@ -191,34 +191,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_66fd25ba3373b": {
-                    "key": "layout_66fd25ba3373b",
-                    "name": "news_feed",
-                    "label": "News Feed",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_66fd25c53373d",
-                            "label": "",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "News feed goes here",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": "1"
-                },
                 "layout_699851d337e08": {
                     "key": "layout_699851d337e08",
                     "name": "gallery",
@@ -574,5 +546,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772641067
+    "modified": 1774355539
 }
