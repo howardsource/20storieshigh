@@ -551,6 +551,15 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69c3e555afdea": {
+                    "key": "layout_69c3e555afdea",
+                    "name": "latest_projects",
+                    "label": "Latest Projects",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -618,5 +627,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774436009
+    "modified": 1774445919
 }
