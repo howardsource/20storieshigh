@@ -1,8 +1,10 @@
 <?php 
 $class = 'image';
+$outerClass = 'outer';
 $width = $module['width'] ?? '';
 if ($width === 'column') :
 	$class .= ' inner';
+	$outerClass .= ' padding-top-bottom';
 endif;	
 $fixed_position = !empty($module['fixed_position']);
 if ($fixed_position) :
@@ -23,7 +25,7 @@ if (is_array($image)) {
 	$image_height = $image['sizes']['carousel-height'] ?? '';
 }
 ?>
-<div class="module full-width-image outer <?= esc_attr($background_colour); ?>">
+<div class="module full-width-image <?= esc_attr($outerClass); ?> <?= esc_attr($background_colour); ?>">
 	<div class="<?= esc_attr($class); ?>"<?php if ($image_url) : ?> style="background-image: url('<?= esc_url($image_url); ?>')"<?php endif; ?>>
 		<?php if ($image_url) : ?>
 		<img src="<?= esc_url($image_url); ?>"<?php if ($image_width) : ?> width="<?= esc_attr($image_width); ?>"<?php endif; ?><?php if ($image_height) : ?> height="<?= esc_attr($image_height); ?>"<?php endif; ?> alt="<?= esc_attr($image_alt); ?>" />

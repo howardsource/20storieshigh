@@ -1362,6 +1362,9 @@ body.post-type-archive-show {
 }
 
 .module.full-width-image {
+    &.padding-top-bottom {
+        padding: 4rem 0;
+    }
     .image {
         aspect-ratio: 16 / 9;
         background-size: cover;
@@ -1370,7 +1373,7 @@ body.post-type-archive-show {
             background-attachment: fixed;
         }
         &.inner {
-            margin: 4rem auto;
+            //padding: 4rem auto;
         }
         img {
             display: none;
