@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_69c3a9b867ba4",
+    "title": "Shows Archive",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Shows Archive",
+    "menu_slug": "shows-archive",
+    "parent_slug": "edit.php?post_type=show",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1774430663
+}

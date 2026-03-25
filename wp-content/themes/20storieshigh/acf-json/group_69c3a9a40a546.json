@@ -1,9 +1,9 @@
 {
-    "key": "group_69c250b84f834",
-    "title": "Projects Archive",
+    "key": "group_69c3a9a40a546",
+    "title": "Shows Archive",
     "fields": [
         {
-            "key": "field_69c250b884e6e",
+            "key": "field_69c3a9a40b597",
             "label": "Highlighted Show",
             "name": "",
             "aria-label": "",
@@ -21,9 +21,9 @@
             "selected": 0
         },
         {
-            "key": "field_69c2513884e70",
+            "key": "field_69c3a9a40b59f",
             "label": "Title",
-            "name": "highlight_title",
+            "name": "show_highlight_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -42,9 +42,9 @@
             "append": ""
         },
         {
-            "key": "field_69c250e084e6f",
-            "label": "Current \/ Highlighted Project",
-            "name": "highlighted_project",
+            "key": "field_69c3a9a40b5a5",
+            "label": "Current \/ Highlighted Show",
+            "name": "highlighted_show",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -56,7 +56,7 @@
                 "id": ""
             },
             "post_type": [
-                "projects"
+                "show"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -74,7 +74,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "projects-archive"
+                "value": "shows-archive"
             }
         ]
     ],
@@ -88,5 +88,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774430701
+    "modified": 1774434117
 }

@@ -253,10 +253,66 @@
                 },
                 "layout_69c2afaa1964a": {
                     "key": "layout_69c2afaa1964a",
-                    "name": "latest_projects",
-                    "label": "Latest Projects",
+                    "name": "highlighted_shows_and_projects",
+                    "label": "Highlighted Shows and Projects",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_69c3be7984885",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Highlighted Shows and Projects",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_69c3be8984886",
+                            "label": "Highlighted Posts",
+                            "name": "highlighted_posts",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projects",
+                                "show"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type"
+                            ],
+                            "return_format": "object",
+                            "min": "",
+                            "max": "",
+                            "allow_in_bindings": 0,
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": []
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -530,6 +586,13 @@
                 "operator": "==",
                 "value": "projects"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "show"
+            }
         ]
     ],
     "menu_order": 4,
@@ -555,5 +618,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774366642
+    "modified": 1774436009
 }

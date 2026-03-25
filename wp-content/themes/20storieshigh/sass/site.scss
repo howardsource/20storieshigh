@@ -388,6 +388,7 @@ body.single-news {
 }
 
 body.post-type-archive-projects,
+body.post-type-archive-show,
 body.post-type-archive-news {
     #title-banner {
         margin-top: 0;
@@ -654,6 +655,36 @@ body.post-type-archive-news {
         .projects-list .project-item:hover .archive-more-link a::after,
         .projects-list .project-item:hover .archive-more-link span::after {
             transform: translateX(1rem);
+        }
+    }
+}
+
+body.post-type-archive-show {
+    #title-banner {
+        background-color: $color-yellow;
+    }
+
+    #breadcrumb-bar {
+        background-color: $color-yellow;
+    }
+
+    .current-show {
+        .current-show-label {
+            color: $color-yellow;
+        }
+
+        .current-show-text h3 {
+            color: $color-yellow;
+        }
+
+        .current-show-text .project-date {
+            color: $color-yellow;
+        }
+    }
+
+    .archive.archive-projects {
+        .archive-heading {
+            color: $color-yellow;
         }
     }
 }
@@ -2515,7 +2546,8 @@ footer {
         }
     }
 
-    body.post-type-archive-projects .archive.archive-projects .projects-list {
+    body.post-type-archive-projects .archive.archive-projects .projects-list,
+    body.post-type-archive-show .archive.archive-projects .projects-list {
         grid-template-columns: 1fr;
     }
 
