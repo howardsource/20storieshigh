@@ -21,7 +21,7 @@ get_header();
 <?php endif; ?>
 
 <?php
-$highlighted_show = get_field('highlighted_show', 'options');
+$highlighted_show = get_field('highlighted_project', 'options');
 $current_show_id  = $highlighted_show instanceof WP_Post
 	? (int) $highlighted_show->ID
 	: (is_numeric($highlighted_show) ? (int) $highlighted_show : 0);
@@ -47,7 +47,7 @@ $current_show_id  = $highlighted_show instanceof WP_Post
 					</div>
 				<?php endif; ?>
 				<p class="large-button-link">
-					<a href="<?= esc_url(get_permalink($current_show_id)); ?>">View Show</a>
+					<a href="<?= esc_url(get_permalink($current_show_id)); ?>">View Project</a>
 				</p>
 			</div>
 			<div class="project-image current-show-image">
@@ -83,9 +83,9 @@ $current_show_id  = $highlighted_show instanceof WP_Post
 					<article <?php post_class('project-item'); ?>>
 						<a href="<?php the_permalink(); ?>" class="project-link">
 						<?php if(get_field('show_status')=='current')	: ?>
-						<div class="project-status">Current Show</div>
+						<div class="project-status">Current Project</div>
 						<?php else : ?>
-						<div class="project-status">Past Show</div>
+						<div class="project-status">Past Project</div>
 						<?php endif; ?>
 						<div class="project-image">
 								<?php 
