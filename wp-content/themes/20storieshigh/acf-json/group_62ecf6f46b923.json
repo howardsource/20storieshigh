@@ -560,6 +560,37 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_69dcd839bc190": {
+                    "key": "layout_69dcd839bc190",
+                    "name": "instagram_feed",
+                    "label": "Instagram Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69dcd83ebc192",
+                            "label": "Shortcode",
+                            "name": "shortcode",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -627,5 +658,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774445919
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776080965
 }
