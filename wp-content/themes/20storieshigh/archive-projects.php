@@ -73,7 +73,7 @@ $current_show_id  = $highlighted_show instanceof WP_Post
 
 <div class="outer archive archive-projects purple">
 	<div class="archive-heading-outer">
-		<h3 class="archive-heading">Past Shows</h3>
+		<h3 class="archive-heading">Projects</h3>
 	</div>
 	<div class="inner">
 		<?php if (have_posts()) : ?>
