@@ -1,3 +1,25 @@
+<?php $donate_url = site_url('donate'); ?>
+
+<div
+	id="donate-modal"
+	class="donate-modal"
+	role="dialog"
+	aria-modal="true"
+	aria-labelledby="donate-modal-title"
+	hidden
+>
+	<div class="donate-modal-panel">
+		<button type="button" class="donate-modal-close" data-donate-modal-close="true" aria-label="Close donate window">
+			<span>Close</span>
+		</button>
+		<div class="donate-modal-content">
+			<p class="donate-modal-eyebrow">Support 20 Stories High</p>
+			<h2 id="donate-modal-title">Donate</h2>
+			<?= get_field('donate_text', 'options'); ?>
+		</div>
+	</div>
+</div>
+
 <div
 	id="mobile-menu-modal"
 	class="mobile-menu-modal"
@@ -86,6 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	var members = document.querySelectorAll('#main-content .module.team .team-member');
 	var accordions = document.querySelectorAll('#main-content .module.accordion .accordion-section');
 	var burger = document.querySelector('.burger-menu');
+	var donateTrigger = document.querySelector('[data-donate-modal-trigger]');
+	var donateModal = document.getElementById('donate-modal');
+	var donateModalClose = donateModal ? donateModal.querySelector('[data-donate-modal-close]') : null;
 	var mobileMenu = document.getElementById('mobile-menu-modal');
 	var mobileMenuClose = mobileMenu ? mobileMenu.querySelector('[data-mobile-menu-close]') : null;
 	var previousFocus = null;
@@ -146,12 +171,48 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	function openDonateModal() {
+		if (!donateModal) return;
+		previousFocus = document.activeElement;
+		donateModal.removeAttribute('hidden');
+		donateModal.classList.add('is-open');
+		if (donateTrigger) {
+			donateTrigger.setAttribute('aria-expanded', 'true');
+		}
+		var firstFocusable = donateModal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+		if (firstFocusable && firstFocusable.focus) {
+			firstFocusable.focus();
+		}
+	}
+
+	function closeDonateModal() {
+		if (!donateModal) return;
+		donateModal.classList.remove('is-open');
+		donateModal.setAttribute('hidden', 'true');
+		if (donateTrigger) {
+			donateTrigger.setAttribute('aria-expanded', 'false');
+		}
+		if (previousFocus && previousFocus.focus) {
+			previousFocus.focus();
+		}
+	}
+
 	if (burger && mobileMenu) {
 		burger.addEventListener('click', function () {
 			if (mobileMenu.classList.contains('is-open')) {
 				closeMobileMenu();
 			} else {
 				openMobileMenu();
+			}
+		});
+	}
+
+	if (donateTrigger && donateModal) {
+		donateTrigger.addEventListener('click', function () {
+			if (donateModal.classList.contains('is-open')) {
+				closeDonateModal();
+			} else {
+				openDonateModal();
 			}
 		});
 	}
@@ -168,9 +229,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	if (donateModal && donateModalClose) {
+		donateModalClose.addEventListener('click', function () {
+			closeDonateModal();
+		});
+
+		donateModal.addEventListener('click', function (event) {
+			if (event.target === donateModal) {
+				closeDonateModal();
+			}
+		});
+	}
+
 	document.addEventListener('keydown', function (event) {
 		if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('is-open')) {
 			closeMobileMenu();
+		}
+		if (event.key === 'Escape' && donateModal && donateModal.classList.contains('is-open')) {
+			closeDonateModal();
 		}
 	});
 })();

@@ -33,7 +33,7 @@ $current_show_id  = $highlighted_show instanceof WP_Post
 		<div class="current-show-panel">
 			<div class="project-text current-show-text">
 				<p class="current-show-label">
-					<?=  get_field('highlight_title', 'options'); ?>
+					<?=  get_field('project_highlight_title', 'options'); ?>
 				</p>
 				<h3><?= get_the_title($current_show_id); ?></h3>
 				<?php if (get_field('excerpt', $current_show_id)) : ?>

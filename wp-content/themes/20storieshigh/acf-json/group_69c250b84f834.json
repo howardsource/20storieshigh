@@ -23,7 +23,7 @@
         {
             "key": "field_69c2513884e70",
             "label": "Title",
-            "name": "highlight_title",
+            "name": "project_highlight_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -88,5 +88,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774430701
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776945321
 }

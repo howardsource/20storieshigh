@@ -10,10 +10,21 @@
 		</head>
 	<?php
 		$bodyClass = '';
-		if (is_page() && $post->post_parent) {
+		$current_post = get_post();
+		if (is_page() && $current_post && $current_post->post_parent) {
 			$bodyClass .= 'child-page';
 		}
 	?>
-	<body <?php echo body_class($bodyClass); ?>>
+	<body <?php body_class($bodyClass); ?>>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
-		<a class="donate-tab" href="<?= esc_url(site_url('donate')); ?>">Donate</a>
+		<button
+			type="button"
+			class="donate-tab"
+			aria-label="Open donate window"
+			aria-expanded="false"
+			aria-controls="donate-modal"
+			data-donate-modal-trigger="true"
+			data-donate-url="<?= esc_url(site_url('donate')); ?>"
+		>
+			Donate
+		</button>
