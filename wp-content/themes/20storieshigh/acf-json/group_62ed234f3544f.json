@@ -119,9 +119,9 @@
             },
             "post_type": [
                 "page",
-                "artists",
-                "venues",
-                "news"
+                "news",
+                "show",
+                "projects"
             ],
             "post_status": "",
             "taxonomy": "",
@@ -253,5 +253,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772640364
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1781682635
 }

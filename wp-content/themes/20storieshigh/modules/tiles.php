@@ -5,16 +5,28 @@
 	<div class="inner tile-group <?= esc_attr($module['tile_types']); ?>">
 		<?php foreach($module['tiles'] as $tile) : ?>
 		<?php $colour = ($tile['background_colour']); ?>
-		<div class="tile <?= esc_attr($colour); ?>">
+		<?php $tile_link = isset($tile['link']) ? trim((string) $tile['link']) : ''; ?>
+		<div class="tile <?= esc_attr($colour); ?><?= $tile_link !== '' ? ' has-link' : ''; ?>">
+			<?php if ($tile_link !== '') : ?>
+				<a class="tile-overlay-link" href="<?= esc_url($tile_link); ?>" aria-label="<?= esc_attr($tile['title']); ?>"></a>
+			<?php endif; ?>
 			<div class="image-outer"><div class="image" style="background-image: url('<?= esc_url($tile['image']['sizes']['tiles']); ?>')"></div></div>
 			<?php if ($module['tile_types']==='image-title') : ?>
-				<h4><a href="<?= esc_url($tile['link']); ?>"><?= esc_html($tile['title']); ?></a></h4>
+				<h4>
+					<?php if ($tile_link !== '') : ?>
+						<span><?= esc_html($tile['title']); ?></span>
+					<?php else : ?>
+						<?= esc_html($tile['title']); ?>
+					<?php endif; ?>
+				</h4>
 			<?php else : ?>
 				<h4><?= esc_html($tile['title']); ?></h4>
 			<?php endif; ?>
 			<?php if($tile['excerpt']!='' && $module['tile_types']=='image-overview') : ?><p><?= $tile['excerpt']; ?></p><?php endif; ?>
-				<?php if ($module['tile_types']!=='image-title') : ?>
-					<p class="large-button-link"><a href="<?= esc_url($tile['link']); ?>">Find Out More</a></p>
+				<?php if ($module['tile_types']!=='image-title' && $tile_link !== '') : ?>
+					<p class="large-button-link">
+						<span>Find Out More</span>
+					</p>
 				<?php endif; ?>
 		</div>
 		<?php endforeach; ?>

@@ -231,10 +231,10 @@
                     "sub_fields": [
                         {
                             "key": "field_newsletter_signup_message",
-                            "label": "",
-                            "name": "",
+                            "label": "Signup Text",
+                            "name": "signup_text",
                             "aria-label": "",
-                            "type": "message",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -243,9 +243,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "Newsletter signup module",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
+                            "default_value": "<h3>Be Part Of The Story<\/h3>\r\n<p>Sign up to hear about new shows, creative projects, workshops, opportunities, events and all the good stuff happening across the 20 Stories High community. <\/p>\r\n<p>Whether you’ve seen a show, joined a project, worked with us, or you’re just curious.<\/p>",
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -322,6 +325,27 @@
                     "label": "Resources",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_6a32577d3b7ae",
+                            "label": "Resources Title",
+                            "name": "resources_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Resources",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
                         {
                             "key": "field_69984c8dd0cb1",
                             "label": "Resources",
@@ -660,5 +684,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776080965
+    "modified": 1781684109
 }

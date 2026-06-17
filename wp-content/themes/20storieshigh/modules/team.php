@@ -24,8 +24,6 @@
 					<?php endif; ?>
 					<?php if ($email) : ?>
 						<a href="mailto:<?= $email; ?>"><?= $email; ?></a>
-					<?php else : ?>
-						<span>No email provided</span>
 					<?php endif; ?>
 				</div>
 				<div class="bio"><?= $bio; ?></div>

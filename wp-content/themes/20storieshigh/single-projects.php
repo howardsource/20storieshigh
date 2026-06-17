@@ -23,15 +23,18 @@ get_template_part('banner');
 							</div>
 						<?php endif; ?>
 					</div>
+					<?php $performance_details = get_field('performance_dates'); ?>
+					<?php if ($performance_details) : ?>
 					<div class="project-single-details">
 						<p class="project-single-dates">
 							<?php
 							$performance_details_title = get_field('performance_details_title');
 							echo $performance_details_title ? $performance_details_title : 'Show Dates';
 							?>:<br>
-							<?= get_field('performance_dates'); ?>
+							<?= $performance_details; ?>
 						</p>
 					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 			<?php
