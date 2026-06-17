@@ -3,6 +3,27 @@
     "title": "Resource fields",
     "fields": [
         {
+            "key": "field_6a32608e82128",
+            "label": "Short Display Title (optional)",
+            "name": "short_display_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69984b007085f",
             "label": "Overview",
             "name": "overview",
@@ -79,5 +100,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772640364
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1781686435
 }
