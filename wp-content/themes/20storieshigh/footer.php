@@ -52,6 +52,38 @@
 	</div>
 </div>
 
+<div
+	id="search-modal"
+	class="search-modal"
+	role="dialog"
+	aria-modal="true"
+	aria-labelledby="search-modal-title"
+	hidden
+>
+	<div class="search-modal-panel">
+		<button type="button" class="search-modal-close" data-search-modal-close="true" aria-label="Close search">
+			<span>Close</span>
+		</button>
+		<div class="search-modal-content">
+			<p class="search-modal-eyebrow">Search</p>
+			<h2 id="search-modal-title">Find something</h2>
+			<form role="search" method="get" class="search-modal-form" action="<?= esc_url(home_url('/')); ?>">
+				<label for="search-modal-input" class="screen-reader-text">Search the site</label>
+				<input
+					type="search"
+					id="search-modal-input"
+					name="s"
+					value="<?= esc_attr(get_search_query()); ?>"
+					placeholder="Search shows, projects, news, resources…"
+					autocomplete="off"
+					required
+				/>
+				<button type="submit" class="search-modal-submit">Search</button>
+			</form>
+		</div>
+	</div>
+</div>
+
 <footer id="footer" class="outer black">
 	<div id="footer-navigation" class="inner">
 		<div class="footer-logo">
@@ -129,6 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	var donateModalClose = donateModal ? donateModal.querySelector('[data-donate-modal-close]') : null;
 	var mobileMenu = document.getElementById('mobile-menu-modal');
 	var mobileMenuClose = mobileMenu ? mobileMenu.querySelector('[data-mobile-menu-close]') : null;
+	var searchToggle = document.querySelector('.search-toggle');
+	var searchModal = document.getElementById('search-modal');
+	var searchModalClose = searchModal ? searchModal.querySelector('[data-search-modal-close]') : null;
+	var searchModalInput = searchModal ? searchModal.querySelector('input[type="search"]') : null;
 	var previousFocus = null;
 
 	function setupToggle(elements, openClass) {
@@ -213,6 +249,32 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	function openSearchModal() {
+		if (!searchModal) return;
+		previousFocus = document.activeElement;
+		searchModal.removeAttribute('hidden');
+		searchModal.classList.add('is-open');
+		if (searchToggle) {
+			searchToggle.setAttribute('aria-expanded', 'true');
+		}
+		if (searchModalInput && searchModalInput.focus) {
+			searchModalInput.focus();
+			try { searchModalInput.select(); } catch (_) {}
+		}
+	}
+
+	function closeSearchModal() {
+		if (!searchModal) return;
+		searchModal.classList.remove('is-open');
+		searchModal.setAttribute('hidden', 'true');
+		if (searchToggle) {
+			searchToggle.setAttribute('aria-expanded', 'false');
+		}
+		if (previousFocus && previousFocus.focus) {
+			previousFocus.focus();
+		}
+	}
+
 	if (burger && mobileMenu) {
 		burger.addEventListener('click', function () {
 			if (mobileMenu.classList.contains('is-open')) {
@@ -229,6 +291,28 @@ document.addEventListener('DOMContentLoaded', () => {
 				closeDonateModal();
 			} else {
 				openDonateModal();
+			}
+		});
+	}
+
+	if (searchToggle && searchModal) {
+		searchToggle.addEventListener('click', function () {
+			if (searchModal.classList.contains('is-open')) {
+				closeSearchModal();
+			} else {
+				openSearchModal();
+			}
+		});
+	}
+
+	if (searchModal && searchModalInput) {
+		searchModal.addEventListener('submit', function (event) {
+			var form = event.target.closest && event.target.closest('form');
+			if (!form || !form.classList.contains('search-modal-form')) return;
+			var value = (searchModalInput.value || '').trim();
+			if (!value) {
+				event.preventDefault();
+				searchModalInput.focus();
 			}
 		});
 	}
@@ -257,12 +341,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	if (searchModal && searchModalClose) {
+		searchModalClose.addEventListener('click', function () {
+			closeSearchModal();
+		});
+
+		searchModal.addEventListener('click', function (event) {
+			if (event.target === searchModal) {
+				closeSearchModal();
+			}
+		});
+	}
+
 	document.addEventListener('keydown', function (event) {
 		if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('is-open')) {
 			closeMobileMenu();
 		}
 		if (event.key === 'Escape' && donateModal && donateModal.classList.contains('is-open')) {
 			closeDonateModal();
+		}
+		if (event.key === 'Escape' && searchModal && searchModal.classList.contains('is-open')) {
+			closeSearchModal();
 		}
 	});
 })();
