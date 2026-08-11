@@ -142,6 +142,75 @@
             ]
         },
         {
+            "key": "field_6855bb519a6bc",
+            "label": "Partner Logos",
+            "name": "partner_logos",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_6855bb523a4a4",
+            "button_label": "Add Partner",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6855bb523a4a4",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_6855bb519a6bc"
+                },
+                {
+                    "key": "field_6855bb5287c8f",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_6855bb519a6bc"
+                }
+            ]
+        },
+        {
             "key": "field_672377785ee4d",
             "label": "Policy Links etc.",
             "name": "legal_links",
@@ -182,5 +251,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772640364
+    "modified": 1786454300
 }

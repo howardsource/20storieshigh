@@ -18,6 +18,8 @@ wp-content/upgrade/
 wp-content/cache/
 wp-content/backups/
 wp-content/languages/
+wp-content/plugins/
+wp-content/mu-plugins/
 
 # System
 .DS_Store

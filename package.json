@@ -6,13 +6,15 @@
   "scripts": {
     "sass": "sass wp-content/themes/20storieshigh/sass/site.scss:wp-content/themes/20storieshigh/css/site.css wp-content/themes/20storieshigh/sass/admin.scss:wp-content/themes/20storieshigh/css/admin.css --style=compressed",
     "watch": "sass --watch wp-content/themes/20storieshigh/sass/site.scss:wp-content/themes/20storieshigh/css/site.css wp-content/themes/20storieshigh/sass/admin.scss:wp-content/themes/20storieshigh/css/admin.css",
-    "dev": "browser-sync start --proxy \"http://howardair.local/20storieshigh\" --files \"wp-content/themes/20storieshigh/**/*.php\" \"wp-content/themes/20storieshigh/css/*.css\" --port 3000 --open false"
+    "dev": "browser-sync start --proxy \"http://howardair.local/20storieshigh\" --files \"wp-content/themes/20storieshigh/**/*.php\" \"wp-content/themes/20storieshigh/css/*.css\" --port 3000 --open false",
+    "live": "concurrently -k \"npm:watch\" \"npm:dev\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "concurrently": "^9.2.0",
     "sass": "^1.84.0"
   }
 }

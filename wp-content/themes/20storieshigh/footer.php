@@ -85,7 +85,23 @@
 	</div>
 	<div class="footer-partners inner">
 		<h3>Partners</h3>
-		<p class="small">[logos to go here]</p>
+		<?php $partner_logos = get_field('partner_logos', 'options'); ?>
+		<?php if (!empty($partner_logos)) : ?>
+			<ul class="partner-logos">
+				<?php foreach ($partner_logos as $partner) : ?>
+					<?php if (empty($partner['logo'])) continue; ?>
+					<li class="partner-logo">
+						<?php if (!empty($partner['link']['url'])) : ?>
+							<a href="<?= esc_url($partner['link']['url']); ?>" target="<?= !empty($partner['link']['target']) ? esc_attr($partner['link']['target']) : '_self'; ?>" rel="noopener">
+								<img src="<?= esc_url($partner['logo']['url']); ?>" alt="<?= esc_attr(!empty($partner['link']['title']) ? $partner['link']['title'] : $partner['logo']['alt']); ?>" width="<?= esc_attr($partner['logo']['width']); ?>" height="<?= esc_attr($partner['logo']['height']); ?>" loading="lazy" />
+							</a>
+						<?php else : ?>
+							<img src="<?= esc_url($partner['logo']['url']); ?>" alt="<?= esc_attr($partner['logo']['alt']); ?>" width="<?= esc_attr($partner['logo']['width']); ?>" height="<?= esc_attr($partner['logo']['height']); ?>" loading="lazy" />
+						<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 	</div>
 	<div class="footer-legal inner">
 		<p><a href="#">Privacy Policy</a> / <a href="#">Terms & Conditions</a> / <a href="#">Accessibility</a></p>

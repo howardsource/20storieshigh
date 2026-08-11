@@ -97,7 +97,8 @@
                         "purple": "Purple",
                         "green": "Green",
                         "brick": "Brick",
-                        "bricklight": "Light Brick"
+                        "bricklight": "Light Brick",
+                        "lilac": "Lilac"
                     },
                     "default_value": "navy",
                     "return_format": "value",
@@ -133,5 +134,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1774437014
+    "modified": 1786458376
 }
