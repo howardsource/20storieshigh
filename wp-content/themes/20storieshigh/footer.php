@@ -105,13 +105,10 @@
 		</div>
 		<div id="footer-socials">
 			<ul>
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-instagram.svg" alt="Instagram" width="36" height="24" /></a></li>	
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-facebook.svg" alt="Facebook" width="33" height="33" /></a></li>
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-youtube.svg" alt="YouTube" width="36" height="36" /></a></li>
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-bluesky.svg" alt="Bluesky" width="36" height="28" /></a></li>	
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-pinterest.svg" alt="Pinterest" width="36" height="36" /></a></li>
-				<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/social-spotify.svg" alt="Spotify" width="36" height="36" /></a></li>				
-				
+				<li class="social instagram"><imga href="https://www.instagram.com/20storieshigh/"><img src="<?php echo get_template_directory_uri(); ?>/images/social-instagram.svg" alt="Instagram" width="36" height="24" /></a></li>	
+				<li class="social facebook"><imga href="https://open.spotify.com/artist/6QP03DyHxmMPteuLaCEqPS?si=OjwK6sINQhWQZyYleellkA"><img src="<?php echo get_template_directory_uri(); ?>/images/social-facebook.svg" alt="Facebook" width="33" height="33" /></a></li>
+				<li class="social youtube"><imga href="https://www.youtube.com/@20storieshighTV"><img src="<?php echo get_template_directory_uri(); ?>/images/social-youtube.svg" alt="YouTube" width="36" height="36" /></a></li>
+
 			</ul>
 		</div>
 	</div>
@@ -136,7 +133,7 @@
 		<?php endif; ?>
 	</div>
 	<div class="footer-legal inner">
-		<p><a href="#">Privacy Policy</a> / <a href="#">Terms & Conditions</a> / <a href="#">Accessibility</a></p>
+		<?php echo get_field('legal_links', 'options'); ?>
 	</div>
 </footer>
 <?php wp_footer(); ?>

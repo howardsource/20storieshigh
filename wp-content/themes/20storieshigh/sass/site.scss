@@ -2757,7 +2757,7 @@ footer {
                 color: $color-yellow;
             }
             &:nth-child(5n + 5) h3 a {
-                color: $color-orange;
+                color: $color-lilac;
             }
         }
         
@@ -2785,6 +2785,25 @@ footer {
                 width: 36px;
                 height: 36px;
                 display: inline-block;
+                &.instagram {
+                    img {
+                        transform: translateY(-5px);
+                    }
+                }
+                &.facebook {
+                    img {
+                        transform: translateY(-2px);
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                &.youtube {
+                    img {
+                        transform: translateY(1px);
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
             }
         }
     }
@@ -2843,7 +2862,7 @@ footer {
         color: $color-pink;
         a {
             color: $color-pink;
-            text-decoration: none;
+            
         }
     }
 }
