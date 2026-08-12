@@ -2804,6 +2804,17 @@ footer {
                         height: 32px;
                     }
                 }
+                &.linkedin {
+                    svg,
+                    img {
+                        transform: translateY(0);
+                        width: 32px;
+                        height: 32px;
+                        max-width: 32px;
+                        max-height: 32px;
+                        display: block;
+                    }
+                }
             }
         }
     }

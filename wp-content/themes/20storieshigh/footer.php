@@ -108,7 +108,7 @@
 				<li class="social instagram"><a href="https://www.instagram.com/20storieshigh/"><img src="<?php echo get_template_directory_uri(); ?>/images/social-instagram.svg" alt="Instagram" width="36" height="24" /></a></li>	
 				<li class="social facebook"><a href="https://open.spotify.com/artist/6QP03DyHxmMPteuLaCEqPS?si=OjwK6sINQhWQZyYleellkA"><img src="<?php echo get_template_directory_uri(); ?>/images/social-facebook.svg" alt="Facebook" width="33" height="33" /></a></li>
 				<li class="social youtube"><a href="https://www.youtube.com/@20storieshighTV"><img src="<?php echo get_template_directory_uri(); ?>/images/social-youtube.svg" alt="YouTube" width="36" height="36" /></a></li>
-
+				<li class="social linkedin"><a href="https://www.linkedin.com/company/20-stories-high/posts/" rel="noopener"><img src="<?php echo get_template_directory_uri(); ?>/images/social-linked-in.svg" alt="LinkedIn" width="36" height="36" /></a></li>
 			</ul>
 		</div>
 	</div>
