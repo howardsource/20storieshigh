@@ -2789,7 +2789,7 @@ footer #footer-socials ul li.facebook img {
   height: 30px;
 }
 footer #footer-socials ul li.youtube img {
-  transform: translateY(1px);
+  transform: translateY(-14px);
   width: 32px;
   height: 32px;
 }
